@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="panel panel-default">
+        <div class="panel-heading">Existing IQ Entries</div>
+        <div class="panel-body">
+            <p>Not seeing what you want? <a href="{{  url_for('.iq_inputs') }}">Create New</a></p>
+        </div>
+
+        <div class="container">
+            <h2>IQs</h2>
+            <table class="table">
+                <thead><tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Birthday</th>
+                    <th>Gender</th>
+                    <th>IQ</th>
+                    <th>Remove Entry</th>
+                </tr></thead>
+                <tbody>
+                    {% for result in results %}
+                        <tr>
+                            <td>{{ result.first_name }}</td>
+                            <td>{{ result.last_name }}</td>
+                            <td>{{ result.birth_date }}</td>
+                            <td>{{ result.gender }}</td>
+                            <td>{{ result.iq_level }}</td>
+                            <td><a href="{{ url_for('iq_views.remove_entry',  iq_id=result.id) }}">Delete</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function () {
+            $('#result-table').DataTable({
+                "order": [[2, "desc"]]
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,24 @@
+.navbar-default {
+    background-color: #00609e;
+    margin-bottom: 80px;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover{
+  color: #bababa;
+}
+
+body {
+    padding-top: 50px;
+}
+
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 2px;
+    border: 2px groove;
+}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <script src="{{ url_for('static', filename='js/iq_inputs.js') }}"></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <h1 class="text-center">IQ Inputs</h1>
+            </div>
+            <div class="col-sm-3">
+                <a class="large button" href="{{ url_for('.index') }}">Reset</a>
+{#                <button type="reset" id="Reset" value="Reset" style="width:60px;height:30px;">Reset</button>#}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="query-selects">
+                    <form action="{{ url_for('.store_iq') }}" method="post" data-abide id="input-form">
+                        <fieldset>
+                            <legend>Basic Info</legend>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="First Name">First:</label>
+                                    <input type="text" name="First Name" id="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Last Name">Last:</label>
+                                    <input type="text" name="Last Name" id="Last Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Birth Date">Birthday:</label>
+                                    <input type="date" name="Birth Date" id="Birth Date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Gender">Gender</label>
+                                    <input type="text" name="Gender" id="Gender">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Optional</legend>
+                            <label for="Family_Members">Family Members:</label>
+                            <input type="text" name="Family_Members" id="Family_Members"/>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>IQ</legend>
+                            <input type="number" name="IQ" id="IQ">
+                        </fieldset>
+
+                        <button type="submit" id="submit_button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+    </script>
+{% endblock %}
